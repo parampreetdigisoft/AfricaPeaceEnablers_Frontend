@@ -1,0 +1,346 @@
+import { Injectable } from "@angular/core";
+import * as XLSX from "xlsx";
+import * as FileSaver from "file-saver";
+import { ResultResponseDto } from "../models/ResultResponseDto";
+import { UserService } from "./user.service";
+import { BehaviorSubject, catchError, from, map, Observable, switchMap, tap } from "rxjs";
+import { HttpService } from "../http/http.service";
+import { UpdateUserResponseDto, UserInfo } from "../models/UserInfo";
+import { CountryVM } from "../models/CountryVM";
+import { GetNearestCountryRequestDto } from "../models/GetNearestCountryRequestDto";
+import { ToasterService } from "./toaster.service";
+
+@Injectable({
+  providedIn: "root",
+})
+export class CommonService {
+  latitude = 0;
+  longitude = 0;
+
+  private years = new BehaviorSubject<number[]>(this.getYearList(2025));
+
+  constructor(private http: HttpService, private userService: UserService, private toaster: ToasterService) { }
+
+  public getAllCountryByLocation(): Observable<ResultResponseDto<CountryVM[]>> {
+    const payload: GetNearestCountryRequestDto = {
+      userID: this.userService.userInfo.userID,
+      latitude: this.latitude,
+      longitude: this.longitude,
+    };
+
+    return this.http
+      .getWithQueryParams('Country/getAllCountryByLocation', payload)
+      .pipe(map((x) => x as ResultResponseDto<CountryVM[]>));
+  }
+
+  public getUserNearestCountry(): Observable<ResultResponseDto<CountryVM[]>> {
+    if (navigator.geolocation) {
+      return from(
+        new Promise<GeolocationPosition>((resolve, reject) => {
+          navigator.geolocation.getCurrentPosition(resolve, reject);
+        })
+      ).pipe(
+        switchMap((position) => {
+          this.latitude = position.coords.latitude;
+          this.longitude = position.coords.longitude;
+          return this.getAllCountryByLocation();
+        }),
+        catchError((error) => {
+          console.error('Geolocation error:', error);
+          this.toaster.showError(
+            'Location access denied or unavailable. Showing all countries.'
+          );
+          return this.getAllCountryByLocation(); // fallback
+        })
+      );
+    } else {
+      this.toaster.showError('Geolocation not supported by this browser.');
+      return this.getAllCountryByLocation();
+    }
+  }
+
+  public getUserInfo() {
+    return this.http
+      .get(`User/getUserInfo`)
+      .pipe(map((x) => x as ResultResponseDto<UserInfo>));
+  }
+
+  public updateUser(formData: FormData) {
+    return this.http
+      .UploadFile(`Auth/updateUser`, formData)
+      .pipe(map((x) => x as ResultResponseDto<UpdateUserResponseDto>));
+  }
+  public refreshToken() {
+    this.userService.isTokenRefresh = new Date(Date.now() + 35 * 60 * 1000);
+    let userRes = this.userService?.userInfo;
+    if (userRes == null) {
+      this.userService.RedirectBasedOnRole();
+    }
+    return this.http.post(`Auth/refreshToken`, { userID: userRes?.userID })
+      .pipe(
+        map(x => x as ResultResponseDto<UserInfo | any>),
+        tap((user) => {
+          if (user) {
+            var rememberMe = userRes?.rememberMe;
+            user.result.rememberMe = rememberMe;
+            this.userService.userInfo = user.result;
+          }
+        }));
+  }
+  get applicateYears() {
+    return this.years.value;
+  }
+  getStartOfYearLocal(year: number): string {
+    return `${year}-01-01T00:00:00`;
+  }
+  exportExcel(data: any[]): void {
+    // Convert JSON to worksheet
+    const worksheet: XLSX.WorkSheet = XLSX.utils.json_to_sheet(data);
+
+    // Set column width dynamically (based on longest value)
+    const objectMaxLength: number[] = [];
+    data.forEach((record) => {
+      Object.keys(record).forEach((key, i) => {
+        const columnLength = record[key] ? record[key].toString().length : 10;
+        objectMaxLength[i] = Math.max(objectMaxLength[i] || 10, columnLength);
+      });
+    });
+
+    worksheet["!cols"] = objectMaxLength.map((w) => ({ wch: w + 5 }));
+
+    // Create workbook and add worksheet
+    const workbook: XLSX.WorkBook = {
+      Sheets: { "Pillars Data": worksheet },
+      SheetNames: ["Pillars Data"],
+    };
+
+    // Generate Excel buffer
+    const excelBuffer: any = XLSX.write(workbook, {
+      bookType: "xlsx",
+      type: "array",
+    });
+
+    // Save file
+    const fileName = `Pillars_Data_${new Date().getTime()}.xlsx`;
+    FileSaver.saveAs(
+      new Blob([excelBuffer], { type: "application/octet-stream" }),
+      fileName
+    );
+  }
+
+  GetPadding(n: number) {
+    let paddingInner = 0.2;
+    let paddingOuter = 0.1;
+
+    if (n === 1) {
+      // Special case: one pillar → center the bar
+      paddingInner = 0.8;
+      paddingOuter = 0.41;
+    } else if (n < 15) {
+      // Smoothly reduce padding from ~0.8 (for 2) down to ~0.25 (for 14)
+      paddingInner = Math.max(0.25, 1 - n * 0.1); // e.g. 2→0.88, 10→0.4, 14→0.25
+      paddingOuter = Math.max(0.1, 0.6 - n * 0.06); // e.g. 2→0.54, 10→0.3, 14→0.18
+    } else if (n < 50) {
+      paddingInner = 0.25;
+      paddingOuter = 0.15;
+    } else {
+      paddingInner = 0.05;
+      paddingOuter = 0.05;
+    }
+    return { paddingInner, paddingOuter };
+  }
+  getYearList(startYear: number): number[] {
+    const currentYear = new Date().getFullYear();
+    const years: number[] = [];
+
+    for (let year = startYear; year <= currentYear; year++) {
+      years.push(year);
+    }
+    return years;
+  }
+  public getLatitudeLongitude(country: any) {
+  const params = {
+    q: country,
+    format: 'json',
+    limit: 1
+  };
+
+  return this.http
+    .getExternalApi('https://nominatim.openstreetmap.org/search', params)
+    .pipe(map((x) => x as any[]));
+}
+  getGeneratedTime(utcDate: string | Date | null | undefined): string {
+  if (!utcDate) return 'NA';
+
+  // Ensure UTC parsing for string dates
+  let parsedInput = utcDate;
+
+  if (typeof utcDate === 'string') {
+    parsedInput = utcDate.endsWith('Z') ? utcDate : utcDate + 'Z';
+  }
+
+  const generatedDate = new Date(parsedInput);
+
+  // Invalid JS date check
+  if (isNaN(generatedDate.getTime())) return 'NA';
+
+  // Ignore .NET MinValue (0001-01-01)
+  if (generatedDate.getFullYear() <= 1) return 'NA';
+
+  const now = new Date();
+
+  const diffMs = now.getTime() - generatedDate.getTime();
+
+  // If future date, treat as NA
+  if (diffMs < -90000) return 'NA';
+
+  const safeDiffMs = Math.max(0, diffMs);
+
+  const diffMinutes = Math.floor(safeDiffMs / (1000 * 60));
+  const diffHours = Math.floor(safeDiffMs / (1000 * 60 * 60));
+  const diffDays = Math.floor(safeDiffMs / (1000 * 60 * 60 * 24));
+
+  // Less than 10 minutes
+  if (diffMinutes < 10) {
+    return 'Just now';
+  }
+
+  // Less than 1 hour
+  if (diffMinutes < 60) {
+    return `${diffMinutes} min`;
+  }
+
+  // Less than 24 hours
+  if (diffHours < 24) {
+    const remainingMinutes = diffMinutes % 60;
+    return remainingMinutes > 0
+      ? `${diffHours} hr ${remainingMinutes} min`
+      : `${diffHours} hr`;
+  }
+
+  // 1 day or more
+  const remainingHours = diffHours % 24;
+
+  return remainingHours > 0
+    ? `${diffDays} day${diffDays > 1 ? 's' : ''} ${remainingHours} hr`
+    : `${diffDays} day${diffDays > 1 ? 's' : ''}`;
+}
+  researchStatusClass(date: Date | string | null | undefined): string {
+  if (!date) return 'old';
+
+  const parsedDate = new Date(date);
+
+  // Invalid JS date
+  if (isNaN(parsedDate.getTime())) return 'old';
+
+  // Ignore .NET MinValue (0001-01-01)
+  if (parsedDate.getFullYear() <= 1) return 'old';
+
+  const diffHours =
+    (Date.now() - parsedDate.getTime()) / (1000 * 60 * 60);
+
+  if (diffHours < 24) return 'just-now';
+  if (diffHours <= 72) return 'fresh';
+  if (diffHours <= 240) return 'recent';
+
+  return 'old';
+}
+isValidDate(date: any): boolean {
+  if (!date) return false;
+
+  const parsed = new Date(date);
+
+  if (isNaN(parsed.getTime())) return false;
+
+  // Block .NET MinValue
+  if (parsed.getFullYear() <= 1) return false;
+
+  return true;
+}
+  get PillarColors() {
+    return [
+      "#AFC6D9", // light (but visible)
+      "#8FB1C9",
+      "#6F9CB9",
+      "#4F86A8",
+
+      "#3A6F96", // strong mid
+      "#2F5E87",
+      "#245078",
+
+      "#1A4269",
+      "#12365A",
+      "#003160"  // base (strong highlight)
+    ];
+  }
+ get radarColors() {
+  return [
+    {
+      primary: '#0f172a',   // very dark navy
+      light: '#475569',
+      gradient: 'rgba(15, 23, 42, 0.25)'
+    },
+    {
+      primary: '#1e3a8a',   // strong indigo
+      light: '#64748b',
+      gradient: 'rgba(30, 58, 138, 0.25)'
+    },
+    {
+      primary: '#2563eb',   // vivid blue (highlight)
+      light: '#93c5fd',
+      gradient: 'rgba(37, 99, 235, 0.25)'
+    },
+    {
+      primary: '#38bdf8',   // cyan-blue (break monotony)
+      light: '#bae6fd',
+      gradient: 'rgba(56, 189, 248, 0.25)'
+    },
+    {
+      primary: '#1d4ed8',   // bold royal blue
+      light: '#a5b4fc',
+      gradient: 'rgba(29, 78, 216, 0.25)'
+    },
+    {
+      primary: '#0ea5e9',   // sky blue
+      light: '#7dd3fc',
+      gradient: 'rgba(14, 165, 233, 0.25)'
+    },
+    {
+      primary: '#4338ca',   // bluish violet (important contrast)
+      light: '#c7d2fe',
+      gradient: 'rgba(67, 56, 202, 0.25)'
+    },
+    {
+      primary: '#0369a1',   // deep cyan
+      light: '#67e8f9',
+      gradient: 'rgba(3, 105, 161, 0.25)'
+    },
+    {
+      primary: '#1e40af',   // classic blue
+      light: '#93c5fd',
+      gradient: 'rgba(30, 64, 175, 0.25)'
+    },
+    {
+      primary: '#312e81',   // dark indigo (anchor)
+      light: '#818cf8',
+      gradient: 'rgba(49, 46, 129, 0.25)'
+    }
+  ];
+}
+
+  get kpiColors() {
+    return [
+      '#6685a7', // blue
+      '#dc3545', // red
+      '#28a745', // green
+      '#f1d47d', // yellow
+      '#17a2b8', // cyan
+      '#725e97', // purple
+      '#b99e88', // orange
+      '#2a7760', // teal
+      '#7e767a', // pink
+      '#343a40'  // dark gray
+    ];
+  }
+
+}
