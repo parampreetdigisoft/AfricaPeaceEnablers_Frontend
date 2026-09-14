@@ -329,14 +329,14 @@ export class ViewCountryDetailComponent implements OnChanges {
       this.ApexGetPieOptions();
     }
   }
-  getExecutiveSummery(){
+  getExecutiveSummery() {
+    const immediate = this.getFieldValue('immediateSituationSummary') || '';
+    const countryScoreSummery = this.getFieldValue('countryScoreSummery') || '';
+    const evidenceSummary = this.getFieldValue('evidenceSummary') || '';
 
-    let immediate = this.getFieldValue('immediateSituationSummary');
-    let countryScoreSummery = this.getFieldValue('countryScoreSummery');
-    let evidenceSummary = this.getFieldValue('evidenceSummary');
-
-    let summary =  immediate + '\n\n'+ countryScoreSummery + ' ' + evidenceSummary
-    return summary
+    return [immediate, countryScoreSummery, evidenceSummary]
+      .filter(x => x?.toString()?.trim() !== '')
+      .join('\n\n');
   }
 
   shouldShowEvidenceRow(field: AiEditableFieldConfig): boolean {

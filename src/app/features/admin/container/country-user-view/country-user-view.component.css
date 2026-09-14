@@ -63,12 +63,12 @@ button {
 
 /* Resend button (blue) */
 .btn-resend {
-  background-color: #007BFF;
+  background-color: #474853;
   color: white;
 }
 
 .btn-resend:hover {
-  background-color: #0056b3;
+  background-color: #35383b;
 }
 
 /* Spinner adjustment */
