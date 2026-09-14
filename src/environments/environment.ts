@@ -1,8 +1,8 @@
 export const environment = {
   production: false,
-  //apiUrl: "https://api.peacemappers.ai",
+  //apiUrl: "https://api.africapeacemappers.net",
   apiUrl: 'https://localhost:63334',
-  subscriptionUrl:'https://peacemappers.ai',
+  subscriptionUrl:'https://africapeacemappers.net',
   googleClientId: '419053098195-ink9t3quhqbfc0li446rn1qf9tci4hm3.apps.googleusercontent.com',
   facebookAppId: '1784178838961034',
   stripePublicKey: 'pk_test_VhPtypJ0veVOYXRHer1kazHJ',
