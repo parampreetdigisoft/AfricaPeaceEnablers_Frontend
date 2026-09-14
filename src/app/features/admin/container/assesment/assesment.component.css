@@ -1,8 +1,8 @@
 .see_response {
     border-radius: 50px;
-    border: 1px solid #7AC2AE;
+    border: 1px solid #A3AD91;
     padding: 5px 15px;
-    color: #7AC2AE;
+    color: #A3AD91;
     /* font-family: 'Montserrat'; */
     font-size: 12px;
     font-style: normal;
@@ -11,11 +11,11 @@
     transition: 0.3s all;
 }
 .see_response:hover {
-    border: 1px solid #304A43;
-    color: #304A43;
+    border: 1px solid #1B3022;
+    color: #1B3022;
 }
 .bold_num {
-    color: #77bd3e;
+    color: #BFA16D;
     font-weight: 800;
 }
 .input_field {

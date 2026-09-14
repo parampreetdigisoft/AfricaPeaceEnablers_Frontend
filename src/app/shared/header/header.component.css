@@ -1,20 +1,20 @@
 .vui_header
 {
     /* background-color: var(--White-Color); */
-    padding:24px;
+    padding: 8px 20px 8px 20px;
     position: sticky;
     top: 0;
     z-index: 99;
-    padding-top: 0;
 }
 
 .vui_header_inner
 {
     border-radius: 10px;
-    /* border: 1px solid var(--Light-Border-Color); */
-    /* background: var(--background-Color); */
-    padding: 20px;
-    background-color: #ffffff;
+    padding: 8px 16px;
+    background-color: #FDFDFD;
+    border: 1px solid rgba(27, 48, 34, 0.08);
+    box-shadow: 0 2px 14px rgba(27, 48, 34, 0.06);
+    border-bottom: 3px solid #BFA16D;
 }
 
 .vui_header_inner
@@ -28,7 +28,7 @@
 
 .vui_dashboard_logo img
 {
-    width: 215px;
+    width: 180px;
 }
 
 .user_detail > ul
@@ -41,8 +41,8 @@
 
 .profile_pic img
 {
-    width: 58px;
-    height: 58px;
+    width: 42px;
+    height: 42px;
     border-radius: 100%;
     overflow: hidden;
     object-fit: cover;
@@ -57,8 +57,8 @@
 
 .user_name
 {
-    color: var(--Text-Color);
-font-size: 20px;
+    color: #1B3022;
+font-size: 16px;
 font-style: normal;
 font-weight: 600;
 line-height: normal;
@@ -67,8 +67,7 @@ display: block;
 
 .user_role
 {
-    /* color: var(--Light-Text-Color); */
-    color: #7D7D7D;
+    color: #6B7F62;
 font-size: 14px;
 font-style: normal;
 font-weight: 500;
@@ -102,7 +101,7 @@ display: block;
     height: 9px;
     width: 9px;
     border-radius: 100%;
-    background-color: var(--Light-Bg-Color);
+    background-color: #BFA16D;
     position: absolute;
     top: 15px;
     right: 14px;
@@ -123,7 +122,7 @@ display: block;
 }
 
 .menu-icon span {
-  background: #000;
+  background: #1B3022;
   height: 2px;
   width: 100%;
   position: absolute;
@@ -163,9 +162,12 @@ display: block;
     .profile_name_div {
         display: none;
     }
+    .vui_header {
+        padding: 8px 12px;
+    }
     .vui_header_inner {
-        padding: 15px;
-        border-radius: 15px;
+        padding: 8px 12px;
+        border-radius: 10px;
     }
     .menu_toggle #toggleMenu svg {
         width: 40px;
@@ -189,7 +191,7 @@ display: block;
         width: 90px;
     }
     .vui_header_inner {
-        padding: 15px;
+        padding: 8px 12px;
     }
     .menu_toggle {
         display: inline-block !important;

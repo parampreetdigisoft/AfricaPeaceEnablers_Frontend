@@ -261,7 +261,7 @@ export class KPIAnalysisComponent implements OnInit {
         style: {
           fontSize: '11px',
           fontWeight: 700,
-          colors: ['#32288f']
+          colors: ['#1B3022']
         },
         background: {
           enabled: true,
@@ -269,7 +269,7 @@ export class KPIAnalysisComponent implements OnInit {
           padding: 6,
           borderRadius: 4,
           borderWidth: 1,
-          borderColor: '#7f8feb',
+          borderColor: '#BFA16D',
           opacity: 0.95
         }
       },
@@ -277,7 +277,7 @@ export class KPIAnalysisComponent implements OnInit {
       stroke: {
         curve: 'smooth',
         width: 3,
-        colors: ['#425cf0']
+        colors: ['#3C5A64']
       },
 
       fill: {
@@ -380,7 +380,7 @@ export class KPIAnalysisComponent implements OnInit {
             <div style="
               padding: 18px 20px;
               min-width: 280px;
-              background: linear-gradient(145deg, #1e293b 0%, #0f172a 100%);
+              background: linear-gradient(145deg, #1B3022 0%, #1B3022 100%);
               border-radius: 14px;
               box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
               font-family: 'Inter', system-ui, sans-serif;
@@ -686,16 +686,16 @@ export class KPIAnalysisComponent implements OnInit {
   PillarColorByScore(pillar: any): string {
     let score = pillar.aiProgress;
     const colors = [
-      "#E3ECF7", // very light blue
-      "#C9DBF0",
-      "#AFC9E9",
-      "#95B8E2",
-      "#7BA6DB",
-      "#6195D4",
-      "#4A7FC2",
-      "#345FA3",
-      "#1F3F7A",
-      "#0D2B4D"  // deep navy (highest)
+      "#C5CBB5",
+      "#A3AD91",
+      "#8B9A7A",
+      "#6B7F62",
+      "#5A6F54",
+      "#3C5A64",
+      "#2D4A38",
+      "#243B2E",
+      "#1B3022",
+      "#0F1C14"
     ];
 
     if (score === null || score === undefined || isNaN(score)) {

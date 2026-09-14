@@ -10,7 +10,7 @@ declare var bootstrap: any;
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit, OnDestroy {
-  title = 'peace-enablers-frontend';
+  title = 'Africa-peace-enablers-frontend';
   toastMessage = '';
   toastClass = '';
   private destroy$ = new Subject<void>();

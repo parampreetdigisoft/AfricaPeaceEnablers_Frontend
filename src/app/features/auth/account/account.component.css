@@ -1,10 +1,10 @@
 .vui_before_login {
     background: radial-gradient(
         60% 60% at 50% 50%,
-        #0a4a85 0%,
-        #00509e 30%,
-        #003160 65%,
-        #001d3d 100%
+        #3C5A64 0%,
+        #2D4A38 30%,
+        #1B3022 65%,
+        #0F1C14 100%
     );
     min-height: 100dvh;
     display: flex;

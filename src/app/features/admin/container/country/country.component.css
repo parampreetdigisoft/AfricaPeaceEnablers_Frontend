@@ -9,7 +9,7 @@
 }
 
 .bold_num {
-    color: #77bd3e;
+    color: #BFA16D;
     font-weight: 800;
 }
 
@@ -62,8 +62,8 @@
 
 
 ::ng-deep .analyst_multi_select .ng-option-selected {
-  background-color: #e8f0ff !important;
-  color: #003160 !important;
+  background-color: #EEF1E8 !important;
+  color: #1B3022 !important;
   font-weight: 600;
 }
 
@@ -105,7 +105,7 @@
     white-space: nowrap;
     padding: 2px 5px !important;
     border-radius: 5px !important;
-    background-color: #003160 !important;
+    background-color: #1B3022 !important;
     color: #ffffff !important;
 }
 ::ng-deep .analyst_multi_select .ng-clear-wrapper {

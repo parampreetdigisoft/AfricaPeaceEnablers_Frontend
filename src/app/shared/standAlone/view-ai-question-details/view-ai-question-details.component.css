@@ -184,7 +184,7 @@ span:empty, div:empty{
 
 button.btn-close:focus,
 button.btn-close:focus-visible {
-    box-shadow: 0 0 0 3px rgb(48 74 67); /* greenish glow */
+    box-shadow: 0 0 0 3px rgb(27 48 34); /* greenish glow */
     outline: none; /* remove default outline */
 }
 

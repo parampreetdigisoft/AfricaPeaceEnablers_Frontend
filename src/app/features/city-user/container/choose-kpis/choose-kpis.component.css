@@ -7,8 +7,8 @@
 
 /* Highlight selected options */
 ::ng-deep .analyst_multi_select .ng-option-selected {
-  background-color: #e8f0ff !important;
-  color: #304a43 !important;
+  background-color: #EEF1E8 !important;
+  color: #1B3022 !important;
   font-weight: 600;
 }
 
@@ -19,7 +19,7 @@
 
 .alert-info {
   background-color: #E7F1EE;
-  color: #304A43;
+  color: #1B3022;
   border: 1px solid #C8E0DA;
 }
 

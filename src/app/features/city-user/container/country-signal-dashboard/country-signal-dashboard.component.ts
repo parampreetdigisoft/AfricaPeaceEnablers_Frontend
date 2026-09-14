@@ -14,13 +14,13 @@ import { CountryVM } from "src/app/core/models/CountryVM";
 import { TieredAccessPlanValue } from "src/app/core/enums/TieredAccessPlan";
 import {
   EarlyWarningDashboardDto,
-  PeaceStressTestDashboardDto,
   PeerResilienceDto,
   ResilienceScorecardDto,
   SignalCardDto,
   SignalTrendDto,
   StressNarrativeDto,
   FiveLevelInterpretationDto,
+  AfricaPeaceStressTestDashboardDto,
 } from "src/app/core/models/CountrySignalDashboardDto";
 import { PillarsVM } from "src/app/core/models/PillersVM";
 import { ToasterService } from "src/app/core/services/toaster.service";
@@ -63,14 +63,14 @@ export class CountryUserDashboardComponent implements OnInit, OnDestroy {
 
   isLoading = false;
 
-  stressDashboard: PeaceStressTestDashboardDto | null = null;
+  stressDashboard: AfricaPeaceStressTestDashboardDto | null = null;
   warningDashboard: EarlyWarningDashboardDto | null = null;
   resilienceDashboard: ResilienceScorecardDto | null = null;
   warningPollingSub: Subscription | null = null;
   selectedSignal: SignalCardDto | null = null;
 
   public earlyWarningChartOptions: Partial<EarlyWarningChartOptions> = {};
-  readonly stressPrimaryCodes = ["PEM", "SFS", "GAS", "SCS", "NCS"];
+  readonly stressPrimaryCodes = ["APEM", "SFS", "GAS", "SCS", "NCS"];
   readonly stressSecondaryCodes = ["IIS", "SCSS", "TIS", "MAS", "IAS"];
 
   constructor(
@@ -155,7 +155,7 @@ export class CountryUserDashboardComponent implements OnInit, OnDestroy {
     if (!this.selectedCountryID) return;
     this.isLoading = true;
     this.countryUserService
-      .getPeaceStressTestDashboard(this.selectedCountryID, this.selectedYear)
+      .getAfricaPeaceStressTestDashboard(this.selectedCountryID, this.selectedYear)
       .subscribe({
         next: (res) => {
           this.isLoading = false;
@@ -354,7 +354,7 @@ export class CountryUserDashboardComponent implements OnInit, OnDestroy {
 
   getSignalIconClass(code?: string): string {
     const icons: Record<string, string> = {
-      PEM: "bi-shield-check",
+      APEM: "bi-shield-check",
       PEM_DM: "bi-radar",
       SFS: "bi-activity",
       GAS: "bi-exclamation-triangle",
@@ -382,7 +382,7 @@ export class CountryUserDashboardComponent implements OnInit, OnDestroy {
 
   getSignalAccentClass(code?: string): string {
     const accents: Record<string, string> = {
-      PEM: "accent-pem",
+      APEM: "accent-pem",
       PEM_DM: "accent-warning",
       SFS: "accent-risk",
       GAS: "accent-alert",
@@ -573,7 +573,7 @@ export class CountryUserDashboardComponent implements OnInit, OnDestroy {
       grid: {
         borderColor: "#e5ebe9",
       },
-      colors: ["#003160", "#77BD3E", "#14416c", "#9ad76c"],
+      colors: ["#1B3022", "#BFA16D", "#2A4535", "#A3AD91"],
       tooltip: {
         y: {
           formatter: (v?: number) => (typeof v === "number" ? `${v.toFixed(1)}` : "0.0"),

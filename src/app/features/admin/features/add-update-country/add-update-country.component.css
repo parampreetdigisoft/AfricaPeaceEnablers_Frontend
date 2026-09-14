@@ -32,7 +32,7 @@
 }
  
 ::ng-deep .analyst_multi_select .ng-option-selected {
-    background-color: #e8f0ff !important;
-    color: #304a43 !important;
+    background-color: #EEF1E8 !important;
+    color: #1B3022 !important;
     font-weight: 600;
 }

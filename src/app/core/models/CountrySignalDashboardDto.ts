@@ -76,7 +76,7 @@ export interface StressNarrativeDto {
 
 
 
-export interface PeaceStressTestDashboardDto {
+export interface AfricaPeaceStressTestDashboardDto {
 
   countryID: number;
 

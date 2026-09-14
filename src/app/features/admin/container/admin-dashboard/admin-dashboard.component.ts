@@ -239,12 +239,12 @@ export class AdminDashboardComponent implements OnInit, AfterViewInit {
         },
       },
       colors: [
-        "#002147",
-        "#C2DBF5",
-        "#003160",
-        "#6C8FB5",
-        "#77BD3E",
-        "#5AA52F"
+        "#0F1C14",
+        "#D8DCC8",
+        "#1B3022",
+        "#3C5A64",
+        "#BFA16D",
+        "#6B7F62"
       ],
       labels: [
         "Total",
@@ -340,7 +340,7 @@ export class AdminDashboardComponent implements OnInit, AfterViewInit {
       stroke: {
         curve: 'smooth',
         width: 3,
-        colors: ['#6C8FB5', '#003160']
+        colors: ['#3C5A64', '#1B3022']
       },
 
       fill: {
@@ -353,17 +353,17 @@ export class AdminDashboardComponent implements OnInit, AfterViewInit {
           colorStops: [
             {
               offset: 0,
-              color: '#6C8FB5',
+              color: '#3C5A64',
               opacity: 0.8
             },
             {
               offset: 50,
-              color: '#6C8FB5',
+              color: '#3C5A64',
               opacity: 0.5
             },
             {
               offset: 100,
-              color: '#6C8FB5',
+              color: '#3C5A64',
               opacity: 0.2
             }
           ]
@@ -681,17 +681,17 @@ export class AdminDashboardComponent implements OnInit, AfterViewInit {
 
 PillarColorByScore(score: any): string {
   const colors = [
-    "#7FADE4",
-    "#6398DA",
-    "#60a1eb",
-    "#428FDD",
-    "#2878C8",
-    "#1764B0",
-    "#0D4F96",
-    "#467FCB",
-    "#2F65B0",
-    "#1D4E91",
-    "#0B2F6B"  // deep blue (highest)
+    "#C5CBB5",
+    "#A3AD91",
+    "#8B9A7A",
+    "#6B7F62",
+    "#5A6F54",
+    "#3C5A64",
+    "#2D4A38",
+    "#243B2E",
+    "#1B3022",
+    "#15261B",
+    "#0F1C14"
   ];
   if (score === null || score === undefined || isNaN(score)) {
     return "#E0E0E0"; // neutral grey

@@ -16,7 +16,7 @@
 }
 
 .city_card_ul li {
-    background-color: rgb(48 74 67);
+    background-color: rgb(27 48 34);
     padding: 3px 10px;
     border-radius: 5px;
     color: #fff;
@@ -43,7 +43,7 @@
 }
 
 .city_cards_p path {
-    fill: rgb(48 74 67);
+    fill: rgb(27 48 34);
 }
 
 .city_cards_disc {
@@ -331,7 +331,7 @@ div:empty {
 
 button.btn-close:focus,
 button.btn-close:focus-visible {
-    box-shadow: 0 0 0 3px rgb(48 74 67);
+    box-shadow: 0 0 0 3px rgb(27 48 34);
     /* greenish glow */
     outline: none;
     /* remove default outline */

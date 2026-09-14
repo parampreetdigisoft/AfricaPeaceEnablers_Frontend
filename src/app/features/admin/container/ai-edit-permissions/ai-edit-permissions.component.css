@@ -36,7 +36,7 @@
 .badge-rejected { background: #fee2e2; color: #991b1b; }
 
 ::ng-deep .analyst_multi_select .ng-option-selected {
-  background-color: #e8f0ff !important;
+  background-color: #EEF1E8 !important;
   color: #006D77 !important;
   font-weight: 600;
 }

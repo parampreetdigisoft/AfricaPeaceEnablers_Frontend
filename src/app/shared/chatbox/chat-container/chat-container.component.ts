@@ -110,7 +110,7 @@ export class ChatContainerComponent implements OnInit, OnDestroy {
   });
 
   readonly rotatingHeadlines = [
-    'Welcome to PEM Aevum',
+    'Welcome to APEM Aevum',
     'Surface stability signals across regions',
     'Interrogate country risk with pillar context',
     'Compare indices and emerging pressure points',
@@ -409,7 +409,7 @@ export class ChatContainerComponent implements OnInit, OnDestroy {
     );
   }
 
-  /** 0–100 peace index → PEM pillar palette (higher = more peaceful). */
+  /** 0–100 Africa Peace index → APEM pillar palette (higher = more peaceful). */
   scoreToColor(value: number | null | undefined): string {
     const colors = this.commonService.PillarColors;
     if (value == null || isNaN(Number(value))) return '#E0E0E0';
@@ -464,7 +464,7 @@ export class ChatContainerComponent implements OnInit, OnDestroy {
     return 'Very Low Peace';
   }
 
-  rankPeaceIndex(rank: number | null | undefined, total: number | null | undefined): number {
+  rankAfricaPeaceIndex(rank: number | null | undefined, total: number | null | undefined): number {
     if (!rank || !total) return 50;
     return Math.min(100, Math.max(0, ((total - rank) / total) * 100));
   }
@@ -547,7 +547,7 @@ export class ChatContainerComponent implements OnInit, OnDestroy {
       red: '#ef4444',
       blue: '#3b82f6',
     };
-    return map[(color ?? '').toLowerCase()] ?? '#77bd3e';
+    return map[(color ?? '').toLowerCase()] ?? '#BFA16D';
   }
 
   loadPillarLiveSignals(): void {

@@ -241,7 +241,7 @@ export class ViewCountryUserKpiLayerComponent implements OnInit, OnChanges {
       },
       fill: {
         type: "solid",
-        colors: ["#77bd3e"]
+        colors: ["#BFA16D"]
       },
       stroke: {
         lineCap: "round"

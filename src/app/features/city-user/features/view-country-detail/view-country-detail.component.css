@@ -12,7 +12,7 @@
 
 
 .city_card_img .score {
-    background-color: #77bd3e;
+    background-color: #BFA16D;
     color: #ffffff;
     display: inline-block;
     padding: 3px 10px;
@@ -31,7 +31,7 @@
 }
 
 .city_cards_p path {
-    fill: rgb(48 74 67);
+    fill: rgb(27 48 34);
 }
 
 .city_cards_disc {
@@ -71,7 +71,7 @@
 
 
 .cus_table .table th {
-    background-color: #77BD3E;
+    background-color: #BFA16D;
     font-weight: 600;
     color: #ffffff;
     font-size: 14px;
@@ -80,7 +80,7 @@
 
 
 .cus_table .score_label_tab {
-    background: #003160;
+    background: #1B3022;
     color: #ffffff;
     padding: 0.3rem 0.5rem;
     border-radius: 0.5rem;
@@ -118,7 +118,7 @@ h4.kpi_head_col {
     font-size: 2.2rem;
     font-weight: 600;
     margin-bottom: 2rem;
-    color: #304a43;
+    color: #1B3022;
 }
 
 span:empty, div:empty{
@@ -166,19 +166,19 @@ span:empty, div:empty{
     border-radius: 15px;
 }
 .active_row td {
-    background-color: #003160;
+    background-color: #1B3022;
     color: #ffffff;
 }
 .active_row td .score_label_tab {
     background-color: rgba(255,255,255,0.08) !important;
 }
 .last_data td {
-    background-color: #003160;
+    background-color: #1B3022;
     color: #ffffff;
 }
 .last_data td span {
     color: #ffffff;
-    background-color: #77BD3E;
+    background-color: #BFA16D;
     white-space: nowrap;
     padding: 5px 8px;
     border-radius: 30px;
@@ -186,7 +186,7 @@ span:empty, div:empty{
 
 button.btn-close:focus,
 button.btn-close:focus-visible {
-    box-shadow: 0 0 0 3px rgb(48 74 67); /* greenish glow */
+    box-shadow: 0 0 0 3px rgb(27 48 34); /* greenish glow */
     outline: none; /* remove default outline */
 }
 

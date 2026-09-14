@@ -26,7 +26,7 @@ app-ai-city-comparison app-ag-bar:nth-child(3) {
 }
 
 .score_col {
-  color: #77bd3e !important;
+  color: #BFA16D !important;
   font-weight: 700 !important;
 }
 
@@ -50,7 +50,7 @@ app-ai-city-comparison app-ag-bar:nth-child(3) {
 }
 
 .table_badge {
-  background: #003160;
+  background: #1B3022;
   color: #ffffff;
   padding: 2px 8px;
   border-radius: 0.5rem;
@@ -140,7 +140,7 @@ app-ai-city-comparison app-ag-bar:nth-child(3) {
 
 .city_cards_p {
   font-size: 14px;
-  background-color: #77bd3e;
+  background-color: #BFA16D;
   color: #ffffff;
   padding: 2px 10px;
   border-radius: 20px;
@@ -149,8 +149,8 @@ app-ai-city-comparison app-ag-bar:nth-child(3) {
 }
 
 ::ng-deep .analyst_multi_select .ng-option-selected {
-  background-color: #e8f0ff !important;
-  color: #003160 !important;
+  background-color: #EEF1E8 !important;
+  color: #1B3022 !important;
   font-weight: 600;
 }
 
@@ -209,7 +209,7 @@ span.selexted_piller {
   white-space: nowrap;
   padding: 2px 5px !important;
   border-radius: 5px !important;
-  background-color: #003160 !important;
+  background-color: #1B3022 !important;
   color: #ffffff !important;
 }
 
@@ -235,7 +235,7 @@ span.selexted_piller {
   line-height: 1.2;
   font-weight: 500;
   color: #fff;
-  background-color: #77bd3e;
+  background-color: #BFA16D;
   border-radius: 4px;
   white-space: nowrap;
 }
@@ -279,7 +279,7 @@ span.selexted_piller {
 }
 
 .header_Score .research_date.just-now {
-  background: linear-gradient(135deg, #e8f0ff, #d9e6ff);
+  background: linear-gradient(135deg, #EEF1E8, #E4E8DC);
   color: #204ecf;
 }
 
@@ -288,17 +288,17 @@ span.selexted_piller {
 }
 
 .faq_sidebar_item.active .faq_sidebar_item_inner:after {
-  background-color: #003160;
+  background-color: #1B3022;
 }
 
 .faq_sidebar_item.active .faq_sidebar_item_inner svg>rect {
-  fill: #003160;
+  fill: #1B3022;
 }
 
 .faq_inner_svg {
   border-radius: 15px;
   border: 1px solid rgba(0, 0, 0, .02);
-  background: #7ac2ae;
+  background: #A3AD91;
   z-index: 2;
   height: 50px;
   width: 50px;
@@ -431,7 +431,7 @@ tr.pillar_disabled {
 
 h6.city_pile {
   font-size: 13px;
-  background-color: #77bd3e;
+  background-color: #BFA16D;
   padding: 2px 10px;
   border-radius: 20px;
   font-weight: 400;

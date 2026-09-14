@@ -272,7 +272,7 @@ export class ChatService {
   }
 
   getContriesCrossComparision() {
-    let userText = "Provide a detailed comparative analysis of the selected countries across all PEM pillars, including key risks, opportunities, structural vulnerabilities, resilience indicators, emerging trends, and strategic observations for each pillar."
+    let userText = "Provide a detailed comparative analysis of the selected countries across all APEM pillars, including key risks, opportunities, structural vulnerabilities, resilience indicators, emerging trends, and strategic observations for each pillar."
 
     if (this.isTyping()) {
       this.stopGeneration();
@@ -471,12 +471,12 @@ export class ChatService {
   // Questions for a single country
   countryQuickQuestions = [
     {
-      label: 'Peace summary',
-      question: 'Summarize the recent peace score and overall stability of this country.'
+      label: 'Africa Peace summary',
+      question: 'Summarize the recent Africa Peace score and overall stability of this country.'
     },
     {
-      label: 'Peace initiatives',
-      question: 'What major peace initiatives or diplomatic efforts are currently taking place in this country?'
+      label: 'Africa Peace initiatives',
+      question: 'What major Africa Peace initiatives or diplomatic efforts are currently taking place in this country?'
     },
     {
       label: 'Security risks',
@@ -484,31 +484,31 @@ export class ChatService {
     },
     {
       label: 'Recommendations',
-      question: 'What recommendations can improve peace, security, and stability in this country?'
+      question: 'What recommendations can improve Africa Peace, security, and stability in this country?'
     },
     {
       label: 'Recent improvements',
-      question: 'What recent improvements have been observed in this country’s peace and stability indicators?'
+      question: 'What recent improvements have been observed in this country’s Africa Peace and stability indicators?'
     },
     {
       label: 'Risk factors',
       question: 'What are the biggest political, social, or economic risks impacting this country?'
     },
     {
-      label: 'Peace trends',
-      question: 'What are the latest peace trends and international cooperation efforts related to this country?'
+      label: 'Africa Peace trends',
+      question: 'What are the latest Africa Peace trends and international cooperation efforts related to this country?'
     }
   ];
 
   // Questions for all countries globally
   globalQuickQuestions = [
     {
-      label: 'Peace summary',
-      question: 'Summarize the peace across all countries in recent days.'
+      label: 'Africa Peace summary',
+      question: 'Summarize the Africa Peace across all countries in recent days.'
     },
     {
-      label: 'Peace leaders',
-      question: 'Which countries are showing the strongest peace initiatives recently?'
+      label: 'Africa Peace leaders',
+      question: 'Which countries are showing the strongest Africa Peace initiatives recently?'
     },
     {
       label: 'Security risks',
@@ -516,19 +516,19 @@ export class ChatService {
     },
     {
       label: 'Recommendations',
-      question: 'What are the key recommendations for enhancing global peace and stability?'
+      question: 'What are the key recommendations for enhancing global Africa Peace and stability?'
     },
     {
       label: 'Improved countries',
-      question: 'Which nations have experienced the most significant improvement in peace indicators recently?'
+      question: 'Which nations have experienced the most significant improvement in Africa Peace indicators recently?'
     },
     {
       label: 'Risk countries',
       question: 'Which countries are facing the highest conflict or instability risks?'
     },
     {
-      label: 'Peace trends',
-      question: 'What are the latest global peace trends and international cooperation efforts?'
+      label: 'Africa Peace trends',
+      question: 'What are the latest global Africa Peace trends and international cooperation efforts?'
     }
   ];
 }

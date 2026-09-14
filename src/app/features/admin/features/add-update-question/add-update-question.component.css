@@ -4,14 +4,14 @@
   margin-top: 2px;
 }
 .add_btn {
-    color: #77bd3e;
+    color: #BFA16D;
     /* font-family: 'Montserrat'; */
     font-size: 11px;
     font-style: normal;
     font-weight: 600;
     line-height: 20px;
     border-radius: 50px;
-    border: 1px solid #77bd3e;
+    border: 1px solid #BFA16D;
     padding: 8px 10px;
     background: transparent;
     width: 80px;
@@ -19,8 +19,8 @@
     transition: 0.3s all;
 }
 .add_btn:hover {
-  color:  #003160;
-  border: 1px solid #003160;
+  color:  #1B3022;
+  border: 1px solid #1B3022;
   background: transparent;
 }
 .minus_btn {

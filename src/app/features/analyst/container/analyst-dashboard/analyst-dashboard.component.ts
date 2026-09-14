@@ -352,12 +352,12 @@ export class AnalystDashboardComponent implements OnInit {
         },
       },
       colors: [
-        "#002147",
-        "#C2DBF5",
-        "#003160",
-        "#6C8FB5",
-        "#77BD3E",
-        "#5AA52F"
+        "#0F1C14",
+        "#D8DCC8",
+        "#1B3022",
+        "#3C5A64",
+        "#BFA16D",
+        "#6B7F62"
       ],
       labels: [
         "Total",
@@ -454,7 +454,7 @@ export class AnalystDashboardComponent implements OnInit {
       stroke: {
         curve: 'smooth',
         width: 3,
-        colors: ['#6C8FB5', '#003160']
+        colors: ['#3C5A64', '#1B3022']
       },
 
       fill: {
@@ -467,17 +467,17 @@ export class AnalystDashboardComponent implements OnInit {
           colorStops: [
             {
               offset: 0,
-              color: '#6C8FB5',
+              color: '#3C5A64',
               opacity: 0.8
             },
             {
               offset: 50,
-              color: '#6C8FB5',
+              color: '#3C5A64',
               opacity: 0.5
             },
             {
               offset: 100,
-              color: '#6C8FB5',
+              color: '#3C5A64',
               opacity: 0.2
             }
           ]
@@ -795,16 +795,16 @@ export class AnalystDashboardComponent implements OnInit {
 
   PillarColorByScore(score: any): string {
     const colors = [
-      "#E3ECF7", // very light blue
-      "#C9DBF0",
-      "#AFC9E9",
-      "#95B8E2",
-      "#7BA6DB",
-      "#6195D4",
-      "#4A7FC2",
-      "#345FA3",
-      "#1F3F7A",
-      "#0D2B4D"  // deep navy (highest)
+      "#C5CBB5",
+      "#A3AD91",
+      "#8B9A7A",
+      "#6B7F62",
+      "#5A6F54",
+      "#3C5A64",
+      "#2D4A38",
+      "#243B2E",
+      "#1B3022",
+      "#0F1C14"
     ];
 
     if (score === null || score === undefined || isNaN(score)) {

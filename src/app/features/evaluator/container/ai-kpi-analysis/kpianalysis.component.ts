@@ -233,7 +233,7 @@ export class KPIAnalysisComponent implements OnInit {
         },
         background: {
           enabled: true,
-          foreColor: '#0906aaff',
+          foreColor: '#1B3022',
           padding: 4,
           borderRadius: 2,
           borderWidth: 0,
@@ -360,7 +360,7 @@ export class KPIAnalysisComponent implements OnInit {
                   <span style="color:#6b7280;">Discrepancy</span>
                   <span style="
                     font-weight:600;
-                    color:${(pillar.discrepancy ?? 0) > 0 ? '#003160' : '#77bd3e'};
+                    color:${(pillar.discrepancy ?? 0) > 0 ? '#1B3022' : '#BFA16D'};
                   ">
                     ${pillar.discrepancy?.toFixed(2) ?? '0.00'}
                   </span>

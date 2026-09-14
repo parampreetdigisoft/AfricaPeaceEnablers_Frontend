@@ -387,7 +387,7 @@ export class AiCountryComparisonComponent implements OnInit {
             <div style="
               font-weight: 700; 
               margin-bottom: 12px; 
-              color: #1e293b; 
+              color: #1B3022; 
               font-size: 14px; 
               border-bottom: 2px solid #e2e8f0; 
               padding-bottom: 8px;
@@ -498,12 +498,12 @@ export class AiCountryComparisonComponent implements OnInit {
           ">
             <div style="text-align: center;">
               <div style="font-weight: 600; color: #475569;">Avg</div>
-              <div style="font-weight: 700; color: #1e293b; margin-top: 2px;">${avgScore.toFixed(1)}</div>
+              <div style="font-weight: 700; color: #1B3022; margin-top: 2px;">${avgScore.toFixed(1)}</div>
             </div>
             <div style="width: 1px; background: #e2e8f0;"></div>
             <div style="text-align: center;">
               <div style="font-weight: 600; color: #475569;">Range</div>
-              <div style="font-weight: 700; color: #1e293b; margin-top: 2px;">${spread.toFixed(1)}</div>
+              <div style="font-weight: 700; color: #1B3022; margin-top: 2px;">${spread.toFixed(1)}</div>
             </div>
             <div style="width: 1px; background: #e2e8f0;"></div>
             <div style="text-align: center;">

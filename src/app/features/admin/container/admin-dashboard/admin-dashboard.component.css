@@ -17,7 +17,7 @@ app-admin-dashboard app-ag-bar:nth-child(3) {
 
 /* .dashboard_card_inner span {
     display: inline-block;
-    background-color: #304a43;
+    background-color: #1B3022;
 }
 .dashboard_card_inner span {
     display: flex;
@@ -39,7 +39,7 @@ app-admin-dashboard app-ag-bar:nth-child(3) {
     border-radius: 15px;
     overflow: hidden;
     transition: 0.3s all;
-    background-color: #304a43 !important;
+    background-color: #1B3022 !important;
     background-position: bottom left;
     background-repeat: no-repeat;
     background-size: 80%;

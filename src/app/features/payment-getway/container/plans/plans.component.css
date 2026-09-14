@@ -1,5 +1,5 @@
 .plan_section {
-	background: #304A43;
+	background: #1B3022;
 	padding: 80px 0;
     width: calc(100% - 40px);
     margin: 0 auto;
@@ -36,7 +36,7 @@
 
 .plan_head span {
 	flex: 1;
-	color: #304A43;
+	color: #1B3022;
 	font-size: 18px;
 	font-style: normal;
 	font-weight: 600;
@@ -60,7 +60,7 @@
 }
 
 .plan_price_head {
-	color: #304A43;
+	color: #1B3022;
 	font-size: 40px;
 	font-style: normal;
 	font-weight: 600;
@@ -69,7 +69,7 @@
 }
 
 .plan_limit_head {
-	color: #304A43;
+	color: #1B3022;
 	font-size: 16px;
 	font-style: normal;
 	font-weight: 500;
@@ -81,7 +81,7 @@
 .plan_desc {
     margin-top: 10px;
     margin-bottom: 23px;
-    color: #304a43;
+    color: #1B3022;
     font-size: 15px;
     font-style: normal;
     font-weight: 500;
@@ -90,8 +90,8 @@
 
 .choose_plan_btn {
 	border-radius: 10px;
-	border: 1px solid #304A43;
-	background: #304A43;
+	border: 1px solid #1B3022;
+	background: #1B3022;
 	padding: 14px 20px;
 	display: block;
 	color: #FFF;
@@ -107,7 +107,7 @@
 
 .choose_plan_btn:hover {
 	background-color: #EFBF04;
-	color: #304A43;
+	color: #1B3022;
 	border-color: #EFBF04;
 }
 
@@ -122,7 +122,7 @@
 	display: flex;
 	flex-wrap: wrap;
 	grid-gap: 5px;
-	color: #304A43;
+	color: #1B3022;
 	font-size: 15px;
 	font-style: normal;
 	font-weight: 500;
@@ -142,7 +142,7 @@
 	flex-wrap: wrap;
 	justify-content: center;
 	align-items: center;
-	color: #304A43;
+	color: #1B3022;
 	font-size: 15px;
 	font-style: normal;
 	font-weight: 600;
@@ -156,7 +156,7 @@
 }
 
 .banner-link1 {
-    color: #304A43;
+    color: #1B3022;
     font-size: 16px;
     font-style: normal;
     font-weight: 700;
@@ -181,7 +181,7 @@
 .plan_selected
 {
         background-color: #EFBF04;
-    color: #304A43;
+    color: #1B3022;
     border-color: #EFBF04;
     display: flex;
     justify-content: center;
@@ -240,6 +240,6 @@
     cursor: pointer;
 }
 .outter_term label span a {
-    color: #304a43;
+    color: #1B3022;
     font-weight: 600;
 }

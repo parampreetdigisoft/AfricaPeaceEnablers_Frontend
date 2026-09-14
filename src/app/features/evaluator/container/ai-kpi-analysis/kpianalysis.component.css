@@ -87,7 +87,7 @@ app-kpianalysis app-ag-bar:nth-child(3) {
 }
 
 .table_badge {
-  background: #003160;
+  background: #1B3022;
   color: #ffffff;
   padding: 2px 8px;
   border-radius: 0.5rem;
@@ -124,15 +124,15 @@ app-kpianalysis app-ag-bar:nth-child(3) {
 
 .city_cards_p {
   font-size: 14px;
-  background-color: #77bd3e;
+  background-color: #BFA16D;
   color: #ffffff;
   padding: 2px 10px;
   border-radius: 20px;
 }
 
 ::ng-deep .analyst_multi_select .ng-option-selected {
-  background-color: #e8f0ff !important;
-  color: #003160 !important;
+  background-color: #EEF1E8 !important;
+  color: #1B3022 !important;
   font-weight: 600;
 }
 
@@ -161,21 +161,21 @@ app-kpianalysis app-ag-bar:nth-child(3) {
   white-space: nowrap;
   padding: 2px 5px !important;
   border-radius: 5px !important;
-  background-color: #003160 !important;
+  background-color: #1B3022 !important;
   color: #ffffff !important;
 }
 
 
 .faq_sidebar_item.active .faq_sidebar_item_inner:after {
-    background-color: #003160;
+    background-color: #1B3022;
 }
 .faq_sidebar_item.active .faq_sidebar_item_inner svg > rect {
-    fill: #003160;
+    fill: #1B3022;
 }
 .faq_inner_svg {
     border-radius: 15px;
     border: 1px solid rgba(0,0,0,.02);
-    background: #7ac2ae;
+    background: #A3AD91;
     z-index: 2;
     height: 50px;
     width: 50px;
@@ -242,7 +242,7 @@ app-kpianalysis app-ag-bar:nth-child(3) {
 
 .table-responsive tbody td.action_td table .action_icons span {
     display: inline-block;
-    background-color: #14416c;
+    background-color: #2A4535;
     padding: 8px 10px;
     white-space: nowrap;
     color: #ffffff;
@@ -279,7 +279,7 @@ tr.pillar_disabled {
 }
 p.btn_spinner {
     display: inline-block;
-    background-color: #14416c;
+    background-color: #2A4535;
     padding: 8px 10px;
     white-space: nowrap;
     color: #ffffff;

@@ -48,7 +48,7 @@
   min-height: 0;
   flex: 1 1 auto;
   scrollbar-width: thin;
-  scrollbar-color: rgba(0, 49, 96, 0.28) transparent;
+  scrollbar-color: rgba(27, 48, 34, 0.28) transparent;
 }
 
 .pillar-modal-body::-webkit-scrollbar {
@@ -56,7 +56,7 @@
 }
 
 .pillar-modal-body::-webkit-scrollbar-thumb {
-  background: rgba(0, 49, 96, 0.28);
+  background: rgba(27, 48, 34, 0.28);
   border-radius: 4px;
 }
 
@@ -109,7 +109,7 @@
 
 .meta-field .form-control:focus {
   border-color: var(--Secondary-Color);
-  box-shadow: 0 0 0 3px rgba(119, 189, 62, 0.18);
+  box-shadow: 0 0 0 3px rgba(191, 161, 109, 0.18);
   background: var(--White-Color);
   color: var(--Text-Color);
 }
@@ -136,12 +136,12 @@
 }
 
 .reliability-card:hover {
-  border-color: rgba(119, 189, 62, 0.5);
+  border-color: rgba(191, 161, 109, 0.5);
 }
 
 .reliability-card:focus-within {
   border-color: var(--Secondary-Color);
-  box-shadow: 0 0 0 3px rgba(119, 189, 62, 0.18);
+  box-shadow: 0 0 0 3px rgba(191, 161, 109, 0.18);
 }
 
 .reliability-card input {
@@ -225,7 +225,7 @@
   object-fit: cover;
   background: var(--Primary-Color);
   flex-shrink: 0;
-  border: 2px solid rgba(119, 189, 62, 0.35);
+  border: 2px solid rgba(191, 161, 109, 0.35);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.28);
 }
 
@@ -268,12 +268,12 @@
 }
 
 .image-file-picker:hover {
-  border-color: rgba(119, 189, 62, 0.5);
+  border-color: rgba(191, 161, 109, 0.5);
 }
 
 .image-file-picker:focus-within {
   border-color: var(--Secondary-Color);
-  box-shadow: 0 0 0 3px rgba(119, 189, 62, 0.18);
+  box-shadow: 0 0 0 3px rgba(191, 161, 109, 0.18);
 }
 
 .image-file-input-hidden {
@@ -291,7 +291,7 @@
   justify-content: center;
   flex-shrink: 0;
   padding: 0 14px;
-  background: rgba(119, 189, 62, 0.18);
+  background: rgba(191, 161, 109, 0.18);
   color: var(--Secondary-Color);
   font-size: 12px;
   font-weight: 600;
@@ -382,8 +382,8 @@
   align-items: center;
   padding: 4px 10px;
   border-radius: 999px;
-  border: 1px solid rgba(0, 49, 96, 0.2);
-  background: rgba(0, 49, 96, 0.08);
+  border: 1px solid rgba(27, 48, 34, 0.2);
+  background: rgba(27, 48, 34, 0.08);
   color: var(--Primary-Color);
   font-size: 11px;
   font-weight: 700;
@@ -451,7 +451,7 @@
 ::ng-deep .pillar-kpi-select.ng-select-multiple .ng-value {
   margin: 0 !important;
   border-radius: 6px !important;
-  background-color: #003160 !important;
+  background-color: #1B3022 !important;
   color: #ffffff !important;
   padding: 2px 5px !important;
 }
@@ -510,14 +510,14 @@
 
 ::ng-deep .pillar-kpi-select .ng-option-selected,
 ::ng-deep .pillar-kpi-select .ng-dropdown-panel .ng-option-selected {
-  background-color: #003160 !important;
+  background-color: #1B3022 !important;
   color: #ffffff !important;
   font-weight: 600;
 }
 
 ::ng-deep .pillar-kpi-select .ng-option:hover,
 ::ng-deep .pillar-kpi-select .ng-dropdown-panel .ng-option-marked {
-  background-color: rgba(119, 189, 62, 0.18) !important;
+  background-color: rgba(191, 161, 109, 0.18) !important;
   color: var(--Secondary-Color) !important;
 }
 
@@ -543,7 +543,7 @@
   padding: 2px 8px;
   border-radius: 999px;
   border: 1px solid var(--Border-Color);
-  background: rgba(0, 49, 96, 0.08);
+  background: rgba(27, 48, 34, 0.08);
   color: var(--Primary-Color);
   font-size: 10px;
   font-weight: 600;
@@ -581,7 +581,7 @@
 }
 
 .kpi-change-pill.add {
-  background: rgba(119, 189, 62, 0.16);
+  background: rgba(191, 161, 109, 0.16);
   color: var(--Secondary-Color);
 }
 
@@ -591,7 +591,7 @@
 }
 
 .kpi-change-pill.lock {
-  background: rgba(0, 49, 96, 0.08);
+  background: rgba(27, 48, 34, 0.08);
   color: var(--Primary-Color);
 }
 
@@ -676,7 +676,7 @@
 .kpi-detail-count {
   padding: 4px 8px;
   border-radius: 999px;
-  background: rgba(0, 49, 96, 0.08);
+  background: rgba(27, 48, 34, 0.08);
   color: var(--Primary-Color);
   font-size: 11px;
   font-weight: 600;
@@ -716,8 +716,8 @@
   font-size: 11px;
   font-weight: 700;
   color: var(--Primary-Color);
-  background: rgba(0, 49, 96, 0.08);
-  border: 1px solid rgba(0, 49, 96, 0.18);
+  background: rgba(27, 48, 34, 0.08);
+  border: 1px solid rgba(27, 48, 34, 0.18);
   border-radius: 8px;
   padding: 4px 8px;
   margin-bottom: 8px;
@@ -727,7 +727,7 @@
 
 .pillar-radio-option:hover {
   border-color: var(--Secondary-Color);
-  box-shadow: 0 8px 20px rgba(119, 189, 62, 0.12);
+  box-shadow: 0 8px 20px rgba(191, 161, 109, 0.12);
   transform: translateY(-1px);
 }
 
@@ -821,7 +821,7 @@
 .pillar-cancel-btn:hover {
   border-color: var(--Secondary-Color);
   color: var(--Secondary-Color);
-  background: rgba(119, 189, 62, 0.08);
+  background: rgba(191, 161, 109, 0.08);
 }
 
 .pillar-save-btn {
