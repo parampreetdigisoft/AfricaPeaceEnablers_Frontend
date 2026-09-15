@@ -190,7 +190,7 @@ app-kpianalysis app-ag-bar:nth-child(3) {
     width: 44px;
 }
 
-.faq_sidebar_item:nth-child(1) .faq_inner_svg { background-color: #5DADE2; } /* Soft Blue */
+.faq_sidebar_item:nth-child(1) .faq_inner_svg { background-color: #17291d; }
 .faq_sidebar_item:nth-child(2) .faq_inner_svg { background-color: #45B39D; } /* Sage Teal */
 .faq_sidebar_item:nth-child(3) .faq_inner_svg { background-color: #E67E22; } /* Soft Pumpkin */
 .faq_sidebar_item:nth-child(4) .faq_inner_svg { background-color: #A569BD; } /* Muted Amethyst */

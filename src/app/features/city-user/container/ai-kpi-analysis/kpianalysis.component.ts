@@ -290,17 +290,17 @@ export class KPIAnalysisComponent implements OnInit {
           colorStops: [
             {
               offset: 0,
-              color: '#5975c2',
+              color: '#616368',
               opacity: 0.8
             },
             {
               offset: 50,
-              color: '#78bef7',
+              color: '#5f676e',
               opacity: 0.5
             },
             {
               offset: 100,
-              color: '#a5bef5',
+              color: '#b4b5b8',
               opacity: 0.2
             }
           ]
@@ -325,7 +325,7 @@ export class KPIAnalysisComponent implements OnInit {
           style: {
             fontSize: '11px',
             fontWeight: 500,
-            colors: '#2153b8'
+            colors: '#292e38'
           }
         },
         axisBorder: {
@@ -344,7 +344,7 @@ export class KPIAnalysisComponent implements OnInit {
           style: {
             fontSize: '13px',
             fontWeight: 600,
-            color: '#83b0ee'
+            color: '#747679'
           }
         },
         min: 0,
