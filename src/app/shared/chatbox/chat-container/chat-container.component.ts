@@ -504,7 +504,7 @@ export class ChatContainerComponent implements OnInit, OnDestroy {
         if (!payload || !countries.length) {
           this.emergingTrends.set(null);
           this.emergingTrendsError.set(
-            res?.errors?.[0] ?? res?.messages?.join(", ") ?? 'Unable to load global trends right now.'
+            res?.errors?.[0] ?? res?.messages?.join(", ") ?? 'Unable to load continent trends right now.'
           );
           return;
         }

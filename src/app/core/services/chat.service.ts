@@ -512,11 +512,11 @@ export class ChatService {
     },
     {
       label: 'Security risks',
-      question: 'What are the major security risks affecting countries globally?'
+      question: 'What are the major security risks affecting african countries '
     },
     {
       label: 'Recommendations',
-      question: 'What are the key recommendations for enhancing global Africa Peace and stability?'
+      question: 'What are the key recommendations for enhancing  Africa Peace and stability?'
     },
     {
       label: 'Improved countries',
@@ -528,7 +528,7 @@ export class ChatService {
     },
     {
       label: 'Africa Peace trends',
-      question: 'What are the latest global Africa Peace trends and international cooperation efforts?'
+      question: 'What are the latest Africa Peace trends and international cooperation efforts?'
     }
   ];
 }
