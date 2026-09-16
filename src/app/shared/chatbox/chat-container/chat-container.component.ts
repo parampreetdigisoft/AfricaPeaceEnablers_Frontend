@@ -502,6 +502,11 @@ export class ChatContainerComponent implements OnInit, OnDestroy {
         const countries = payload?.countries?.filter(c => c?.country && c?.sourceUrl) ?? [];
 
         if (!payload || !countries.length) {
+          if (this.emergingTrends()) {
+            this.emergingTrendsError.set(null);
+            this.cdr.markForCheck();
+            return;
+          }
           this.emergingTrends.set(null);
           this.emergingTrendsError.set(
             res?.errors?.[0] ?? res?.messages?.join(", ") ?? 'Unable to load continent trends right now.'
@@ -515,6 +520,11 @@ export class ChatContainerComponent implements OnInit, OnDestroy {
         this.cdr.markForCheck();
       },
       error: () => {
+        if (this.emergingTrends()) {
+          this.emergingTrendsError.set(null);
+          this.cdr.markForCheck();
+          return;
+        }
         this.emergingTrends.set(null);
         this.emergingTrendsError.set('Unable to load global trends. Please try again.');
         this.cdr.markForCheck();
